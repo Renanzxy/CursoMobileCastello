@@ -1,28 +1,59 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
-void main() {
-  runApp(MyApp()); //classe principal da aplicação
+void main(){
+  runApp(MaterialApp(home:MyApp()));
 }
 
-//criar a classe principal
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: Text("Exemplo de Uso do PubSpec")),
-        body: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              Fluttertoast.showToast(
-                msg: "Olá, Mundo!!!",
-                toastLength: Toast.LENGTH_SHORT,
-                gravity: ToastGravity.BOTTOM,
-              );
-            },
-            child: Text("Clique Aqui!!!"),
-          ),
+    return Scaffold(
+      appBar: AppBar(title: Text("Exemplo de Layout"),),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row( 
+              mainAxisAlignment: MainAxisAlignment.spaceAround,           
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(width: 150, height: 150, color: Colors.blue),
+                Container(width: 150, height: 150, color: Colors.green),
+                Container(width: 150, height: 150, color: Colors.red)
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(width: 150, height: 150, color: Colors.green),
+                Container(width: 150, height: 150, decoration: BoxDecoration(borderRadius: BorderRadius.circular(75),color: Colors.red),),
+                Container(width: 150, height: 150, color: Colors.blue)
+              ],),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(width: 150, height: 150, color: Colors.red),
+                Container(width: 150, height: 150, color: Colors.blue),
+                Container(width: 150, height: 150, color: Colors.green)
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Container(width: 150,height: 150, color: Colors.grey,),
+                    Icon(Icons.person)
+                  ],
+                )
+              ],
+            )
+          ],
         ),
       ),
     );
