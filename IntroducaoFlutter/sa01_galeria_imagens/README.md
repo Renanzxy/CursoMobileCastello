@@ -1,3 +1,3 @@
 # sa01_galeria_imagens
 
-A new Flutter project.
+A new Flutter projec
