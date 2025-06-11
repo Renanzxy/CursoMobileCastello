@@ -1,6 +1,6 @@
 class Pet {
   //atributos -> 
-  final int? id; //pode ser nulo
+  final int? id; //pode ser nulo, pois é o BD que vai dar o valor do id
   final String nome;
   final String raca;
   final String nomeDono;
