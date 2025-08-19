@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:json_shared_preferences/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TelaInicial extends StatefulWidget {
@@ -9,7 +8,7 @@ class TelaInicial extends StatefulWidget {
   final String nomeUsuario;
 
   //constructor
-  TelaInicial({required this.temaEscuro, required this.nomeUsuario});
+  const TelaInicial({super.key, required this.temaEscuro, required this.nomeUsuario});
 
   @override
   State<StatefulWidget> createState() {
